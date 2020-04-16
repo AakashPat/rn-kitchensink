@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 import { Text, View, Button, AsyncStorage, StyleSheet, TextInput, TouchableHighlight, TouchableWithoutFeedback } from "react-native";
 
-interface Props {
-    navigation: any
-}
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,

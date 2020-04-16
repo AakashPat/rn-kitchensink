@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const HomeScreen = ({ navigation }) => {
+const TeamScreen = ({ navigation }) => {
 
     const _signOutAsync = async () => {
         await AsyncStorage.clear();
@@ -23,8 +23,8 @@ const HomeScreen = ({ navigation }) => {
     );
 }
 
-HomeScreen.navigationOptions = {
-    title: 'Home',
+TeamScreen.navigationOptions = {
+    title: 'Team',
 };
 
-export default HomeScreen;
+export default TeamScreen;

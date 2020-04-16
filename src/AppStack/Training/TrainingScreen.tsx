@@ -10,7 +10,11 @@ const styles = StyleSheet.create({
     },
 });
 
-const HomeScreen = ({ navigation }) => {
+interface Props {
+    navigation: any
+}
+
+const TrainingScreen = ({ navigation }) => {
 
     const _signOutAsync = async () => {
         await AsyncStorage.clear();
@@ -23,8 +27,8 @@ const HomeScreen = ({ navigation }) => {
     );
 }
 
-HomeScreen.navigationOptions = {
-    title: 'Home',
+TrainingScreen.navigationOptions = {
+    title: 'Training',
 };
 
-export default HomeScreen;
+export default TrainingScreen;
