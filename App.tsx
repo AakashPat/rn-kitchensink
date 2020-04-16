@@ -1,19 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
-}
+// Implementation of HomeScreen, OtherScreen, SignInScreen, AuthLoadingScreen
+// goes here.
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import HomeScreen from './src/AppStack/Home/HomeScreen';
+import SignInScreen from './src/Authentication/SignInScreen';
+import SignUpScreen from './src/Authentication/SignUpScreen';
+
+import AuthLoadingScreen from './src/AuthLoading/AuthLoading';
+
+const AppStack = createStackNavigator({ Home: HomeScreen });
+const AuthStack = createStackNavigator({ SignIn: SignInScreen, SignUp: SignUpScreen });
+
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      AuthLoading: AuthLoadingScreen,
+      App: AppStack,
+      Auth: AuthStack,
+    },
+    {
+      initialRouteName: 'AuthLoading',
+    }
+  )
+);
