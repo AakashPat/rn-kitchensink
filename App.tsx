@@ -10,7 +10,7 @@ import SignUpScreen from './src/Authentication/SignUpScreen';
 
 import AuthLoadingScreen from './src/AuthLoading/AuthLoading';
 
-const AppStack = createStackNavigator({ Home: HomeStack });
+const AppStack = createStackNavigator({ Home: HomeStack }, { headerMode: 'none' });
 const AuthStack = createStackNavigator({ SignIn: SignInScreen, SignUp: SignUpScreen });
 
 export default createAppContainer(
@@ -22,6 +22,7 @@ export default createAppContainer(
     },
     {
       initialRouteName: 'AuthLoading',
+
     }
   )
 );

@@ -10,6 +10,7 @@ import HomeScreen from './Home/HomeScreen';
 import TeamScreen from './Team/TeamScreen';
 import TrainingScreen from './Training/TrainingScreen';
 import ProfileScreen from './Profile/ProfileScreen';
+import { createStackNavigator } from 'react-navigation-stack';
 
 class SettingsScreen extends React.Component {
     render() {
@@ -21,9 +22,37 @@ class SettingsScreen extends React.Component {
     }
 }
 
+const HomeStack = createStackNavigator({
+    HomeScreen: {
+        screen: HomeScreen,
+        navigationOptions: {
+            headerStyle: {
+                backgroundColor: 'black',
+            },
+            headerTintColor: '#EEFC68'
+        }
+    },
+},
+    {
+        headerMode: 'float'
+    });
+
+const TeamStack = createStackNavigator({
+    TeamScreen: {
+        screen: TeamScreen,
+        navigationOptions: {
+            headerStyle: {
+                backgroundColor: 'black',
+            },
+            headerTintColor: '#EEFC68'
+        }
+    },
+});
+
+
 const TabNavigator = createBottomTabNavigator({
-    Home: HomeScreen,
-    Team: TeamScreen,
+    Home: HomeStack,
+    Team: TeamStack,
     Training: TrainingScreen,
     Profile: ProfileScreen,
 },
