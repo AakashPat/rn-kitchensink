@@ -52,7 +52,7 @@ const TeamStack = createStackNavigator({
 
 const TabNavigator = createBottomTabNavigator({
     Home: HomeStack,
-    Team: TeamStack,
+    Teams: TeamStack,
     Training: TrainingScreen,
     Profile: ProfileScreen,
 },
@@ -69,7 +69,7 @@ const TabNavigator = createBottomTabNavigator({
                         ? 'md-home'
                         : 'md-home';
                     return <IconComponent name={iconName} size={25} color={tintColor} />;
-                } else if (routeName === 'Team') {
+                } else if (routeName === 'Teams') {
                     iconName = focused ? 'team' : 'team';
                     return <AntDesignComponent name={iconName} size={25} color={tintColor} />;
                 } else if (routeName === 'Training') {

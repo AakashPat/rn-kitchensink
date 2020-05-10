@@ -24,7 +24,7 @@ const TeamScreen = ({ navigation }) => {
 }
 
 TeamScreen.navigationOptions = {
-    title: 'Team',
+    title: 'Teams',
 };
 
 export default TeamScreen;

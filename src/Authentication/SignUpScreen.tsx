@@ -97,7 +97,7 @@ const SignUpScreen = ({ navigation }) => {
 }
 
 SignUpScreen.navigationOptions = {
-    title: 'Please sign up',
+    headerShown: false
 };
 
 export default SignUpScreen
